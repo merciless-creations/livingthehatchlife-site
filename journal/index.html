@@ -1,0 +1,20 @@
+---
+layout: default
+title: "Journal"
+description: "Stories and updates from the road to Living the Hatch Life."
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">Journal</p><h1 class="section-title">Stories from the road to the Hatch.</h1></div>
+    <div class="grid cards-3">
+      {% for post in site.posts %}
+      <a class="card journal-card" href="{{ post.url | relative_url }}">
+        <time>{{ post.date | date: "%B %-d, %Y" }}</time>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

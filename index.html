@@ -1,0 +1,80 @@
+---
+layout: default
+title: "Living the Hatch Life™"
+description: "A Steinhatchee-inspired lifestyle brand for fishing, scalloping, boating, family, friends, and original marine mascots."
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow">Steinhatchee-inspired · apparel coming 2027</p>
+      <h1>Living the <em>Hatch Life</em></h1>
+      <p class="lead">A coastal lifestyle brand celebrating fishing, scalloping, boating, family, festival weekends, and the small-town magic of Steinhatchee, Florida.</p>
+      <div class="button-row">
+        <a class="btn primary" href="{{ '/story/' | relative_url }}">Read the origin story</a>
+        <a class="btn secondary" href="{{ '/characters/' | relative_url }}">Meet the crew</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="field-guide">
+        <div><p class="eyebrow on-dark">Field note</p><strong>The Hatch has stories.</strong></div>
+        <p>First heard from a fishing guide. Confirmed at Good Times. Sealed at Fiddler Crab Festival.</p>
+      </div>
+      <p class="placeholder-note">Development visual: abstract coastal field-guide panel, not a photograph of a real local scene.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid cards-3">
+    <div class="card"><p class="meta">01 · Story</p><h3>Found by accident</h3><p>A Tarpon Springs fishing guide said “Steinhatchee.” Curiosity turned into a drive from Jackson, Georgia, and the town did the rest.</p></div>
+    <div class="card"><p class="meta">02 · Characters</p><h3>A crew with heart</h3><p>Scooter, Redd, Trusty, Bad Bonnie, and Hemingway turn the Hatch Life into a world built for shirts, stickers, stories, and smiles.</p></div>
+    <div class="card"><p class="meta">03 · Launch</p><h3>Road to February</h3><p>The first real-world target is Fiddler Crab Festival: a weekend of food, parade energy, vendors, fishing, and Steinhatchee memories.</p></div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">Meet the crew</p><h2 class="section-title">Original marine mascots for a Gulf Coast brand.</h2><p class="muted">Temporary non-representational initials are used until final public character art is selected.</p></div>
+    <div class="grid cards-3">
+      {% assign crew = site.characters | sort: 'order' %}
+      {% for character in crew limit: 3 %}
+      <a class="card" href="{{ character.url | relative_url }}"><div class="visual-token">{{ character.initials }}</div><p class="meta">{{ character.species }}</p><h3>{{ character.title }}</h3><p>{{ character.role }}</p></a>
+      {% endfor %}
+    </div>
+    <p style="margin-top:2rem;"><a class="btn secondary" href="{{ '/characters/' | relative_url }}">See all characters</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">Coming soon</p><h2 class="section-title">Shirts, hats, stickers, decals.</h2></div>
+    <div class="grid cards-4">
+      {% assign products = site.products | sort: 'order' %}
+      {% for product in products %}
+      <a class="card" href="{{ product.url | relative_url }}"><div class="visual-token">{{ product.symbol }}</div><p class="meta">{{ product.category }}</p><h3>{{ product.title }}</h3><p class="muted">Festival-first product preview.</p></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">Journal</p><h2 class="section-title">Building the brand in public.</h2></div>
+    <div class="grid cards-3">
+      {% for post in site.posts limit: 3 %}
+      <a class="card journal-card" href="{{ post.url | relative_url }}"><time>{{ post.date | date: "%b %-d, %Y" }}</time><h3>{{ post.title }}</h3><p>{{ post.excerpt | strip_html | truncate: 135 }}</p></a>
+      {% endfor %}
+    </div>
+    <p style="margin-top:2rem;"><a class="btn secondary" href="{{ '/journal/' | relative_url }}">Read the journal</a></p>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="container prose">
+    <p class="eyebrow">Follow the launch</p>
+    <h2 class="section-title">Road to Fiddler Crab Festival.</h2>
+    <p>Come February, the goal is to bring Living the Hatch Life™ into the real world with apparel, hats, stickers, and the first chapter of the crew’s story.</p>
+    <p><a class="btn secondary" href="{{ '/festival/' | relative_url }}">Festival launch page</a></p>
+  </div>
+</section>

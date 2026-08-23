@@ -1,0 +1,26 @@
+---
+layout: default
+title: "Meet the Crew"
+description: "Meet the Living the Hatch Life mascot crew: Scooter, Redd, Trusty, Bad Bonnie, and Hemingway."
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">The crew</p>
+      <h1 class="section-title">Five original mascots. One coastal world.</h1>
+      <p class="lead">The Living the Hatch Life™ characters are built for apparel, stickers, stories, and family-friendly Gulf Coast adventures.</p>
+    </div>
+    <div class="grid cards-3">
+      {% assign crew = site.characters | sort: 'order' %}
+      {% for character in crew %}
+      <a class="card" href="{{ character.url | relative_url }}">
+        <div class="visual-token">{{ character.initials }}</div>
+        <p class="meta">{{ character.species }}</p>
+        <h3>{{ character.title }}</h3>
+        <p>{{ character.role }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

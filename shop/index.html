@@ -1,0 +1,18 @@
+---
+layout: default
+title: "Shop"
+description: "Living the Hatch Life shirts, hats, stickers, and decals are coming soon."
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">Coming February 2027</p><h1 class="section-title">The first Hatch Life drop is taking shape.</h1><p class="lead">Shirts, hats, stickers, and decals are planned for the road to Fiddler Crab Festival. Ecommerce will connect later through Shopify.</p></div>
+    <div class="grid cards-4">
+      {% assign products = site.products | sort: 'order' %}
+      {% for product in products %}
+      <a class="card" href="{{ product.url | relative_url }}"><div class="visual-token">{{ product.symbol }}</div><p class="meta">{{ product.category }}</p><h3>{{ product.title }}</h3><p class="muted">Coming soon.</p></a>
+      {% endfor %}
+    </div>
+    <div style="margin-top:2rem;">{% include shopify-placeholder.html %}</div>
+  </div>
+</section>
