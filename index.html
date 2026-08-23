@@ -2,6 +2,18 @@
 layout: default
 title: "Living the Hatch Life™"
 description: "A Steinhatchee-inspired lifestyle brand for fishing, scalloping, boating, family, friends, and original marine mascots."
+image: /assets/images/social-preview.svg
+faqs:
+  - question: "What is Living the Hatch Life™?"
+    answer: "Living the Hatch Life™ is a Steinhatchee-inspired lifestyle and apparel brand celebrating fishing, scalloping, boating, festival weekends, family, friends, and original marine-animal mascots."
+  - question: "Is Living the Hatch Life™ officially affiliated with Steinhatchee or local businesses?"
+    answer: "No. Living the Hatch Life™ is an independent brand inspired by personal memories in and around Steinhatchee, Florida. Local places are mentioned as story and gratitude unless an affiliation is specifically stated."
+  - question: "What products are planned?"
+    answer: "The first planned products are T-shirts, hats, stickers, and decals, with the first real-world launch target connected to Fiddler Crab Festival in February 2027."
+  - question: "Who are the Living the Hatch Life™ characters?"
+    answer: "The mascot crew includes Scooter Scallop, Redd Riddle, Trusty Trout, Bad Bonnie Bonnet, and Hemingway Heron. They are original marine-animal characters created for the brand world."
+  - question: "Can I shop Living the Hatch Life™ now?"
+    answer: "Not yet. The shop is currently a coming-soon preview. Ecommerce will connect later through Shopify or a dedicated shop subdomain."
 ---
 
 <section class="hero">
@@ -76,5 +88,23 @@ description: "A Steinhatchee-inspired lifestyle brand for fishing, scalloping, b
     <h2 class="section-title">Road to Fiddler Crab Festival.</h2>
     <p>Come February, the goal is to bring Living the Hatch Life™ into the real world with apparel, hats, stickers, and the first chapter of the crew’s story.</p>
     <p><a class="btn secondary" href="{{ '/festival/' | relative_url }}">Festival launch page</a></p>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="section-title">Quick answers for people finding the Hatch.</h2>
+    </div>
+    <div class="grid cards-3">
+      {% for faq in page.faqs %}
+      <div class="card">
+        <p class="meta">Question {{ forloop.index }}</p>
+        <h3>{{ faq.question }}</h3>
+        <p>{{ faq.answer }}</p>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>

@@ -8,6 +8,7 @@ _site/
 .DS_Store
 __MACOSX/
 *:Zone.Identifier
+Screenshot*.png
 
 # Dependencies / local tooling
 node_modules/

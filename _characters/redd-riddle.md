@@ -5,6 +5,8 @@ initials: "RR"
 species: "Red Drum / Redfish"
 role: "Captain of the crew and natural leader."
 order: 2
+description: "Meet Redd Riddle, the redfish captain and leader of the Living the Hatch Life™ mascot crew."
+image: /assets/images/social-preview.svg
 ---
 
 Redd is the steady hand at the helm — the confident captain who makes sure everyone gets out safe, has a blast, and gets home with a story.

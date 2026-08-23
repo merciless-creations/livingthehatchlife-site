@@ -1,0 +1,24 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ site.brand.name | jsonify }},
+  "legalName": {{ site.brand.legal_name | jsonify }},
+  "alternateName": {{ site.brand.alternate_name | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "logo": {{ site.logo | absolute_url | jsonify }},
+  "image": {{ site.image | absolute_url | jsonify }},
+  "description": {{ site.brand.description | jsonify }},
+  "foundingLocation": {
+    "@type": "Place",
+    "name": {{ site.brand.founding_location | jsonify }}
+  },
+  "sameAs": [
+    {{ site.data.social.instagram | jsonify }},
+    {{ site.data.social.facebook | jsonify }},
+    {{ site.data.social.tiktok | jsonify }},
+    {{ site.data.social.youtube | jsonify }},
+    {{ site.data.social.x | jsonify }}
+  ]
+}
+</script>

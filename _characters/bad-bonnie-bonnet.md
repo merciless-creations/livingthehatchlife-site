@@ -5,6 +5,8 @@ initials: "BB"
 species: "Bonnethead Shark"
 role: "Friendly rival and comic antagonist — not the villain."
 order: 4
+description: "Meet Bad Bonnie Bonnet, the funny bonnethead shark rival in the Living the Hatch Life™ mascot crew."
+image: /assets/images/social-preview.svg
 ---
 
 Bad Bonnie is the crew's grumpy rival who desperately wants to win and, deep down, wants to belong. He cheats only with silly shortcuts, usually loses, and never truly means harm.

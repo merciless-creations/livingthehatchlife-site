@@ -6,6 +6,15 @@ baseurl: ""
 email: "livingthehatchlife@gmail.com"
 timezone: "America/New_York"
 lang: "en-US"
+logo: /assets/images/social-preview.svg
+image: /assets/images/social-preview.svg
+
+brand:
+  legal_name: "Merciless Creations LLC"
+  name: "Living the Hatch Life™"
+  alternate_name: "Hatch Life™"
+  description: "A Steinhatchee-inspired lifestyle and apparel brand celebrating fishing, scalloping, boating, festival weekends, family, friends, and original marine-animal mascots."
+  founding_location: "Steinhatchee, Florida"
 
 permalink: /journal/:title/
 excerpt_separator: "<!--more-->"
