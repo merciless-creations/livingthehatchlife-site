@@ -36,8 +36,8 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--line);
 }
 .header-inner { max-width: 1180px; margin: 0 auto; min-height: 76px; padding: 0 1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; }
-.brand { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2.25rem); line-height: .85; letter-spacing: .12em; text-transform: uppercase; }
-.brand span { display:block; font-family:var(--body); font-size:.55rem; line-height:1.1; letter-spacing:.36em; color:var(--muted); margin-bottom:.22rem; }
+.brand { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2.25rem); line-height: .82; letter-spacing: .12em; text-transform: uppercase; padding-top: .28rem; }
+.brand span { display:block; font-family:var(--body); font-size:.55rem; line-height:1; letter-spacing:.36em; color:var(--muted); margin-bottom:.04rem; }
 .main-nav { display:flex; gap:1rem; align-items:center; }
 .main-nav a { font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
 .main-nav a:hover { color:var(--deep); }
