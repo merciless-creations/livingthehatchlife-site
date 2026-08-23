@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container grid" style="grid-template-columns: .9fr 1.1fr; gap:2rem;">
+    <div class="card"><div class="visual-token">{{ page.symbol | default: '™' }}</div><p class="placeholder-note">Coming-soon product placeholder; not final product photography.</p></div>
+    <div class="prose">
+      <p class="eyebrow">Coming February 2027</p>
+      <h1 class="section-title">{{ page.title }}</h1>
+      {{ content }}
+      {% include shopify-placeholder.html %}
+    </div>
+  </div>
+</section>

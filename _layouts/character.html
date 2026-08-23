@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container grid" style="grid-template-columns: .8fr 1.2fr; align-items:start; gap:2rem;">
+    <div class="card">
+      <div class="visual-token">{{ page.initials }}</div>
+      <p class="meta">{{ page.species }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="muted">{{ page.role }}</p>
+      <p class="placeholder-note">Temporary non-representational character marker. Final public artwork will replace this after image selection.</p>
+    </div>
+    <div class="prose">
+      <p class="eyebrow">Meet the crew</p>
+      <h2 class="section-title">{{ page.title }}</h2>
+      {{ content }}
+      <p><a class="btn secondary" href="{{ '/characters/' | relative_url }}">Back to the crew</a></p>
+    </div>
+  </div>
+</section>

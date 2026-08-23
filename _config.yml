@@ -1,0 +1,55 @@
+title: "Living the Hatch Life™"
+tagline: "Steinhatchee-inspired apparel, characters, stories, and coastal life."
+description: "Living the Hatch Life™ is a Steinhatchee, Florida-inspired lifestyle brand celebrating fishing, scalloping, boating, family, friends, festivals, and original marine-animal mascots."
+url: "https://livingthehatchlife.com"
+baseurl: ""
+email: "livingthehatchlife@gmail.com"
+timezone: "America/New_York"
+lang: "en-US"
+
+permalink: /journal/:title/
+excerpt_separator: "<!--more-->"
+
+collections:
+  characters:
+    output: true
+    permalink: /characters/:path/
+  products:
+    output: true
+    permalink: /shop/:path/
+  places:
+    output: true
+    permalink: /places/:path/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: characters
+    values:
+      layout: character
+  - scope:
+      path: ""
+      type: products
+    values:
+      layout: product
+  - scope:
+      path: ""
+      type: places
+    values:
+      layout: page
+
+exclude:
+  - vendor/
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
+  - README.md

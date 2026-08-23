@@ -12,6 +12,7 @@ __MACOSX/
 # Dependencies / local tooling
 node_modules/
 vendor/bundle/
+.bundle/
 
 # Environment files
 .env

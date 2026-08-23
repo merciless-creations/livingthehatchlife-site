@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<article class="section">
+  <div class="container prose">
+    <p class="eyebrow">Journal · {{ page.date | date: "%B %-d, %Y" }}</p>
+    <h1 class="section-title">{{ page.title }}</h1>
+    {{ content }}
+  </div>
+</article>
