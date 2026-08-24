@@ -79,6 +79,7 @@ img { max-width: 100%; display: block; }
 .card h3 { font-family:var(--display); font-size:1.65rem; margin:.2rem 0 .65rem; }
 .card .meta { color:var(--river); font-size:.72rem; text-transform:uppercase; letter-spacing:.2em; font-weight:800; }
 .visual-token { min-height:190px; border-radius:20px; background:linear-gradient(145deg, rgba(71,184,189,.28), rgba(228,111,60,.2)), repeating-linear-gradient(135deg, rgba(21,33,31,.07) 0 1px, transparent 1px 18px); margin-bottom:1rem; display:grid; place-items:center; color:var(--deep); font-family:var(--display); font-size:3rem; }
+.character-portrait { width:100%; aspect-ratio:3/2; object-fit:cover; object-position:center; border-radius:20px; margin-bottom:1rem; border:1px solid var(--line); background:var(--shell); }
 .band { background:var(--ink); color:white; }
 .band .section-title, .band h3 { color:white; }
 .band .muted { color:rgba(255,255,255,.72); }
@@ -92,6 +93,10 @@ img { max-width: 100%; display: block; }
 .prose { max-width: 860px; }
 .prose p { font-size:1.07rem; }
 .prose h2 { font-family:var(--display); font-size:2.4rem; margin-top:2.4rem; }
+.launch-cta { display:grid; grid-template-columns: 1.2fr .8fr; gap:2rem; align-items:center; background:linear-gradient(145deg, #fff, var(--shell)); border:1px solid var(--line); border-radius:30px; padding:clamp(1.4rem, 4vw, 2.4rem); box-shadow:var(--shadow); }
+.launch-cta h2 { font-family:var(--display); font-size:clamp(2rem, 4vw, 3.5rem); line-height:1; margin:.3rem 0 1rem; }
+.launch-actions { display:grid; gap:1rem; }
+.homepage-proof { border-left: 4px solid var(--sunset); padding-left: 1rem; color:#3d504a; }
 
 @media (max-width: 900px) {
   .main-nav { display:none; position:absolute; top:76px; left:0; right:0; background:white; border-bottom:1px solid var(--line); padding:1rem 1.25rem; flex-direction:column; align-items:flex-start; }
@@ -99,4 +104,5 @@ img { max-width: 100%; display: block; }
   .nav-toggle { display:inline-flex; }
   .hero-inner { grid-template-columns:1fr; }
   .cards-3, .cards-4 { grid-template-columns:1fr; }
+  .launch-cta { grid-template-columns:1fr; }
 }

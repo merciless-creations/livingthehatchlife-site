@@ -16,6 +16,11 @@ brand:
   description: "A Steinhatchee-inspired lifestyle and apparel brand celebrating fishing, scalloping, boating, festival weekends, family, friends, and original marine-animal mascots."
   founding_location: "Steinhatchee, Florida"
 
+analytics:
+  google: ""
+  plausible_domain: ""
+  cloudflare_token: ""
+
 permalink: /journal/:title/
 excerpt_separator: "<!--more-->"
 

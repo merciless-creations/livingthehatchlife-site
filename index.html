@@ -21,7 +21,8 @@ faqs:
     <div>
       <p class="eyebrow">Steinhatchee-inspired · apparel coming 2027</p>
       <h1>Living the <em>Hatch Life</em></h1>
-      <p class="lead">A coastal lifestyle brand celebrating fishing, scalloping, boating, family, festival weekends, and the small-town magic of Steinhatchee, Florida.</p>
+      <p class="lead">A coastal lifestyle and apparel brand celebrating fishing, scalloping, boating, family, festival weekends, and the small-town magic of Steinhatchee, Florida.</p>
+      <p class="homepage-proof">Built from a real story: a Tarpon Springs guide, a first night at Good Times, a father-son birthday fishing trip, and an accidental Fiddler Crab Festival weekend that turned into a yearly pull back to the Hatch.</p>
       <div class="button-row">
         <a class="btn primary" href="{{ '/story/' | relative_url }}">Read the origin story</a>
         <a class="btn secondary" href="{{ '/characters/' | relative_url }}">Meet the crew</a>
@@ -47,11 +48,11 @@ faqs:
 
 <section class="section band">
   <div class="container">
-    <div class="section-head"><p class="eyebrow">Meet the crew</p><h2 class="section-title">Original marine mascots for a Gulf Coast brand.</h2><p class="muted">Temporary non-representational initials are used until final public character art is selected.</p></div>
+    <div class="section-head"><p class="eyebrow">Meet the crew</p><h2 class="section-title">Original marine mascots for a Gulf Coast brand.</h2><p class="muted">Early concept portraits are now on deck. Final production artwork may evolve as the brand style is refined.</p></div>
     <div class="grid cards-3">
       {% assign crew = site.characters | sort: 'order' %}
       {% for character in crew limit: 3 %}
-      <a class="card" href="{{ character.url | relative_url }}"><div class="visual-token">{{ character.initials }}</div><p class="meta">{{ character.species }}</p><h3>{{ character.title }}</h3><p>{{ character.role }}</p></a>
+      <a class="card" href="{{ character.url | relative_url }}"><img class="character-portrait" src="{{ character.image | relative_url }}" alt="{{ character.title }} concept portrait"><p class="meta">{{ character.species }}</p><h3>{{ character.title }}</h3><p>{{ character.role }}</p></a>
       {% endfor %}
     </div>
     <p style="margin-top:2rem;"><a class="btn secondary" href="{{ '/characters/' | relative_url }}">See all characters</a></p>
@@ -88,6 +89,12 @@ faqs:
     <h2 class="section-title">Road to Fiddler Crab Festival.</h2>
     <p>Come February, the goal is to bring Living the Hatch Life™ into the real world with apparel, hats, stickers, and the first chapter of the crew’s story.</p>
     <p><a class="btn secondary" href="{{ '/festival/' | relative_url }}">Festival launch page</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% include launch-cta.html %}
   </div>
 </section>
 

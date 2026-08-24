@@ -1,0 +1,15 @@
+{% if site.analytics.google and site.analytics.google != "" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.analytics.google }}');
+</script>
+{% endif %}
+{% if site.analytics.plausible_domain and site.analytics.plausible_domain != "" %}
+<script defer data-domain="{{ site.analytics.plausible_domain }}" src="https://plausible.io/js/script.js"></script>
+{% endif %}
+{% if site.analytics.cloudflare_token and site.analytics.cloudflare_token != "" %}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"{{ site.analytics.cloudflare_token }}"}'></script>
+{% endif %}
