@@ -51,9 +51,10 @@ img { max-width: 100%; display: block; }
     radial-gradient(circle at 85% 10%, rgba(228,111,60,.38), transparent 24%),
     linear-gradient(145deg, rgba(244,251,248,.96), rgba(232,213,183,.7) 45%, rgba(15,63,68,.12));
   transform: rotate(-4deg);
+  pointer-events: none;
 }
-.hero::after { content:""; position:absolute; inset:0; background-image: linear-gradient(rgba(21,33,31,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(21,33,31,.04) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(to bottom, black, transparent 85%); }
-.hero-inner { position:relative; max-width:1180px; width:100%; display:grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .75fr); gap: clamp(2rem, 6vw, 5rem); align-items:center; }
+.hero::after { content:""; position:absolute; inset:0; background-image: linear-gradient(rgba(21,33,31,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(21,33,31,.04) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(to bottom, black, transparent 85%); pointer-events: none; }
+.hero-inner { position:relative; z-index:1; max-width:1180px; width:100%; display:grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .75fr); gap: clamp(2rem, 6vw, 5rem); align-items:center; }
 .eyebrow { color:var(--river); text-transform:uppercase; letter-spacing:.32em; font-weight:700; font-size:.72rem; }
 .hero h1 { font-family:var(--display); font-size: clamp(3.4rem, 10vw, 8.8rem); line-height:.88; margin:.7rem 0 1.2rem; letter-spacing:-.045em; }
 .hero h1 em { color:var(--river); font-style:italic; }
