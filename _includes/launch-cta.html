@@ -2,10 +2,19 @@
   <div>
     <p class="eyebrow">Follow the first drop</p>
     <h2>First shirts, hats, stickers, and decals are being built for the road to Fiddler Crab Festival.</h2>
-    <p>Want launch updates, character reveals, and behind-the-scenes progress? Follow the brand channels or email us and tell us your Hatch story.</p>
+    <p>Want launch updates, character reveals, and behind-the-scenes progress? Join the early list, follow the brand channels, or tell us your Hatch story.</p>
   </div>
   <div class="launch-actions">
-    <a class="btn primary" href="mailto:livingthehatchlife@gmail.com?subject=Living%20the%20Hatch%20Life%20launch%20updates">Email for updates</a>
+    <form class="launch-form" action="{{ site.forms.launch_updates }}" method="POST">
+      <label for="launch-email">Get launch updates</label>
+      <div class="launch-form-row">
+        <input id="launch-email" type="email" name="email" placeholder="you@example.com" required>
+        <button class="btn primary" type="submit">Join</button>
+      </div>
+      <input type="hidden" name="source" value="Living the Hatch Life website launch CTA">
+      <input type="hidden" name="_subject" value="New Living the Hatch Life launch signup">
+      <p class="form-note">No spam — just launch updates, character reveals, and first-drop news.</p>
+    </form>
     <a class="btn secondary" href="{{ '/journal/' | relative_url }}">Read the journal</a>
     {% include social-links.html %}
   </div>

@@ -17,9 +17,12 @@ brand:
   founding_location: "Steinhatchee, Florida"
 
 analytics:
-  google: ""
+  google: "G-Q5JPEJJWCE"
   plausible_domain: ""
   cloudflare_token: ""
+
+forms:
+  launch_updates: "https://formspree.io/f/mgawbgjp"
 
 permalink: /journal/:title/
 excerpt_separator: "<!--more-->"
