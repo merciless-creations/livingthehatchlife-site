@@ -6,7 +6,7 @@ species: "Atlantic Bay Scallop"
 role: "The mascot and heart of the crew."
 order: 1
 description: "Meet Scooter Scallop, the optimistic Atlantic bay scallop mascot and heart of the Living the Hatch Life™ crew."
-image: /assets/images/social-preview.svg
+image: /assets/images/characters/scooter-scallop.jpg
 ---
 
 Scooter is the wide-eyed spark of the crew — the little scallop who reminds everyone why they fell in love with the Hatch Life in the first place. Every day on the water is his best day ever.
