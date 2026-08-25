@@ -9,6 +9,10 @@ lang: "en-US"
 logo: /assets/images/social-preview.svg
 image: /assets/images/social-preview.svg
 
+twitter:
+  username: thehatchlife
+  card: summary_large_image
+
 brand:
   legal_name: "Merciless Creations LLC"
   name: "Living the Hatch Life™"
