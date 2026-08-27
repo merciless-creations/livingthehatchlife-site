@@ -3,7 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% seo %}
+    {% comment %}
+      jekyll-seo-tag 2.8.0 emits twitter:image and twitter:title with property= instead of
+      name=, and X then renders a card with no image. Upstream fixed it in 2.9.0 (PR #437)
+      but GitHub Pages pins 2.8.0, so rewrite the plugin's own output. Reverting this to a
+      bare {% raw %}{% seo %}{% endraw %} silently breaks X link previews again. No-op once Pages unpins.
+    {% endcomment %}
+    {% capture seo_tags %}{% seo %}{% endcapture %}
+    {{ seo_tags | replace: 'property="twitter:image"', 'name="twitter:image"' | replace: 'property="twitter:title"', 'name="twitter:title"' }}
     {% if page.noindex %}<meta name="robots" content="noindex,follow">{% endif %}
     {% include brand-jsonld.html %}
     {% include faq-jsonld.html %}
