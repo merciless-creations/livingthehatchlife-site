@@ -1,0 +1,76 @@
+---
+layout: default
+title: "Links"
+description: "Every Living the Hatch Life™ link in one place — the origin story, the journal, the mascot crew, and the road to Fiddler Crab Festival 2027."
+image: /assets/images/social-preview.svg
+noindex: true
+sitemap: false
+---
+
+{% assign latest = site.posts | first %}
+
+<section class="section">
+  <div class="container linkhub">
+
+    <div class="linkhub-intro">
+      <p class="eyebrow">Steinhatchee, Florida</p>
+      <h1 class="section-title">Living the Hatch Life™</h1>
+      <p>Fishing, scalloping, festival weekends, and five characters who live out on the flats.</p>
+    </div>
+
+    <div class="linkhub-stack">
+
+      {% if latest %}
+      <a class="linkhub-item feature" href="{{ latest.url | relative_url }}">
+        <span class="linkhub-tag">Newest story</span>
+        <strong>{{ latest.title }}</strong>
+        <span>Read it on the journal.</span>
+      </a>
+      {% endif %}
+
+      <a class="linkhub-item" href="{{ '/story/' | relative_url }}">
+        <strong>How I Found the Hatch</strong>
+        <span>The origin story — how a stranger's fish camp idea turned into all of this.</span>
+      </a>
+
+      <a class="linkhub-item" href="{{ '/festival/' | relative_url }}">
+        <span class="linkhub-tag">February 12–14, 2027</span>
+        <strong>Road to Fiddler Crab Festival</strong>
+        <span>Where the first drop is headed.</span>
+      </a>
+
+      <a class="linkhub-item" href="{{ '/characters/' | relative_url }}">
+        <strong>Meet the Crew</strong>
+        <span>Scooter, Redd, Trusty, Bonnie, and Hemingway.</span>
+      </a>
+
+      <a class="linkhub-item" href="{{ '/journal/' | relative_url }}">
+        <strong>The Journal</strong>
+        <span>Every story from the Hatch, oldest to newest.</span>
+      </a>
+
+      <a class="linkhub-item" href="{{ '/shop/' | relative_url }}">
+        <span class="linkhub-tag">Coming February 2027</span>
+        <strong>Shirts, Hats, Stickers, Decals</strong>
+        <span>See what the first drop looks like.</span>
+      </a>
+
+    </div>
+
+    <form class="launch-form linkhub-form" action="{{ site.forms.launch_updates }}" method="POST">
+      <label for="links-email">Get launch updates</label>
+      <div class="launch-form-row">
+        <input id="links-email" type="email" name="email" placeholder="you@example.com" required>
+        <button class="btn primary" type="submit">Join</button>
+      </div>
+      <input type="hidden" name="source" value="Living the Hatch Life link in bio">
+      <input type="hidden" name="_subject" value="New Living the Hatch Life launch signup">
+      <p class="form-note">No spam — just launch updates, character reveals, and first-drop news.</p>
+    </form>
+
+    {% include social-links.html %}
+
+    <p class="placeholder-note">Living the Hatch Life™ is an independent brand inspired by Steinhatchee. Local places and Fiddler Crab Festival are referenced as personal memories and gratitude, not sponsorships or official affiliations.</p>
+
+  </div>
+</section>
