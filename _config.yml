@@ -6,8 +6,8 @@ baseurl: ""
 email: "livingthehatchlife@gmail.com"
 timezone: "America/New_York"
 lang: "en-US"
-logo: /assets/images/social-preview.png
-image: /assets/images/social-preview.png
+logo: /assets/images/social-card.png
+image: /assets/images/social-card.png
 
 twitter:
   username: thehatchlife
@@ -49,11 +49,14 @@ plugins:
 defaults:
   # jekyll-seo-tag reads og:image from page.image only and has no site-level
   # fallback, so without this default a page emits no og:image at all.
+  # X caches image fetches per exact URL with no way to invalidate, so a failed
+  # fetch sticks to the filename permanently. If a card ever shows text but no
+  # image again, rename this file - regenerating it in place will not help.
   - scope:
       path: ""
     values:
       image:
-        path: /assets/images/social-preview.png
+        path: /assets/images/social-card.png
         width: 1200
         height: 630
         alt: "Living the Hatch Life™ — Steinhatchee, Florida — with the five mascot characters"
