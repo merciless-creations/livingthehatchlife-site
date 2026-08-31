@@ -11,6 +11,8 @@ faqs:
     answer: "The first planned products are T-shirts, hats, stickers, and decals, with the first real-world launch target connected to Fiddler Crab Festival in February 2027."
   - question: "Who are the Living the Hatch Life™ characters?"
     answer: "The mascot crew includes Scooter Scallop, Redd Riddle, Trusty Trout, Bad Bonnie Bonnet, and Hemingway Heron. They are original marine-animal characters created for the brand world."
+  - question: "Is there a Living the Hatch Life™ comic?"
+    answer: "Yes. The comic is a four-panel strip starring the mascot crew. The first story runs across three strips, it is finished, and it can be read start to finish in the Comics section. Every strip carries a full plain-text transcript."
   - question: "Can I shop Living the Hatch Life™ now?"
     answer: "Not yet. The shop is currently a coming-soon preview. Ecommerce will connect later through Shopify or a dedicated shop subdomain."
 ---
@@ -55,6 +57,20 @@ faqs:
       {% endfor %}
     </div>
     <p style="margin-top:2rem;"><a class="btn secondary" href="{{ '/characters/' | relative_url }}">See all characters</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% assign strips = site.comics | sort: 'sequence' %}
+    <div class="section-head"><p class="eyebrow">The strip</p><h2 class="section-title">One bad idea, four panels at a time.</h2><p class="muted">A complete story in {{ strips | size }} four-panel strips. They run in order, and the last one finishes it.</p></div>
+    <div class="grid cards-3">
+      {% for strip in strips limit: 3 %}
+      {% assign stem = '/assets/images/comics/' | append: strip.slug | append: '/panel-1-v' | append: strip.asset_version %}
+      <a class="card comic-card" href="{{ strip.url | relative_url }}"><picture><source type="image/webp" srcset="{{ stem | append: '-540.webp' | relative_url }}"><img class="comic-thumb" src="{{ stem | append: '-1080.jpg' | relative_url }}" width="1080" height="1080" alt="{{ 'Panel one of ' | append: strip.title | escape }}" loading="lazy" decoding="async"></picture><p class="meta">Strip {{ strip.sequence }}</p><h3>{{ strip.title }}</h3><p>{{ strip.description }}</p></a>
+      {% endfor %}
+    </div>
+    <p style="margin-top:2rem;"><a class="btn secondary" href="{{ '/comics/' | relative_url }}">Read the comics</a></p>
   </div>
 </section>
 
