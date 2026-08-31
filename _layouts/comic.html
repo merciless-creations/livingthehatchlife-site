@@ -1,0 +1,85 @@
+---
+layout: default
+---
+{% comment %}
+  Jekyll has no previous_in_collection/next_in_collection, so walk the
+  sequence-sorted collection once: the last strip below page.sequence is the
+  previous one, the first strip above it is the next one.
+{% endcomment %}
+{% assign strips = site.comics | sort: "sequence" %}
+{% assign prev_strip = false %}
+{% assign next_strip = false %}
+{% for strip in strips %}
+  {% if strip.sequence < page.sequence %}{% assign prev_strip = strip %}{% endif %}
+  {% if strip.sequence > page.sequence and next_strip == false %}{% assign next_strip = strip %}{% endif %}
+{% endfor %}
+{% assign panel_dir = '/assets/images/comics/' | append: page.slug %}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Comic {{ page.sequence }} of {{ strips | size }}</p>
+      <h1 class="section-title">{{ page.title }}</h1>
+      <div class="prose">{{ content }}</div>
+    </div>
+
+    <div class="comic-panels">
+      {% for panel in page.panels %}
+      {% assign stem = panel_dir | append: '/panel-' | append: forloop.index | append: '-v' | append: page.asset_version %}
+      <figure class="comic-panel">
+        <picture>
+          <source type="image/webp" srcset="{{ stem | append: '-540.webp' | relative_url }} 540w, {{ stem | append: '-1080.webp' | relative_url }} 1080w" sizes="(max-width: 560px) calc(100vw - 40px), (max-width: 1100px) calc(50vw - 28px), 290px">
+          <img src="{{ stem | append: '-1080.jpg' | relative_url }}" width="1080" height="1080" alt="{{ panel.alt | escape }}"{% if forloop.first %} loading="eager" fetchpriority="high"{% else %} loading="lazy" decoding="async"{% endif %}>
+        </picture>
+        <figcaption>Panel {{ forloop.index }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+
+    <section class="comic-transcript" aria-labelledby="comic-transcript-heading">
+      <h2 id="comic-transcript-heading">Transcript</h2>
+      <p class="comic-scene">Every panel of {{ page.title }} in plain text, in reading order.</p>
+      <ol role="list">
+        {% for panel in page.panels %}
+        <li>
+          <h3>Panel {{ forloop.index }}</h3>
+          <p class="comic-scene">{{ panel.alt }}</p>
+          {% if panel.silent %}
+          <p class="comic-silent muted">No dialogue in this panel.</p>
+          {% else %}
+          <dl class="comic-lines">
+            {% for line in panel.lines %}
+            <dt>{{ line.speaker }}{% if line.thought %} (thinking){% endif %}</dt>
+            <dd{% if line.thought %} class="thought"{% endif %}>{{ line.text }}</dd>
+            {% endfor %}
+          </dl>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <nav class="comic-nav" aria-label="Comic strip navigation">
+      {% if prev_strip %}
+      <a class="comic-nav-link" href="{{ prev_strip.url | relative_url }}" rel="prev">
+        <span>Previous strip</span>
+        <strong>{{ prev_strip.title }}</strong>
+      </a>
+      {% endif %}
+      <a class="comic-nav-link" href="{{ '/comics/' | relative_url }}">
+        <span>All strips</span>
+        <strong>The whole story</strong>
+      </a>
+      {% if next_strip %}
+      <a class="comic-nav-link comic-nav-next" href="{{ next_strip.url | relative_url }}" rel="next">
+        <span>Next strip</span>
+        <strong>{{ next_strip.title }}</strong>
+      </a>
+      {% endif %}
+    </nav>
+
+    <div class="placeholder-note comic-notes">
+      <p>Out on real water, check the marine forecast before you leave the dock, and wear a life vest. Scooter already does.</p>
+      <p>Illustrations generated with AI tools. The story, the characters and every line of dialogue are written by hand.</p>
+    </div>
+  </div>
+</section>

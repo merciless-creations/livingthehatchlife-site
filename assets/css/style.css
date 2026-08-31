@@ -136,3 +136,56 @@ img { max-width: 100%; display: block; }
   .launch-cta { grid-template-columns:1fr; }
   .launch-form-row { grid-template-columns:1fr; }
 }
+
+/* ---------- Comics ---------- */
+.comic-panels { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:1rem; }
+.comic-panel { margin:0; background:var(--shell); border:2px solid var(--ink); border-radius:18px; overflow:hidden; box-shadow:0 12px 38px rgba(21,33,31,.08); }
+/* <picture> is inline, so without this the block img leaves a baseline gap above the caption. */
+.comic-panel picture { display:block; }
+.comic-panel img { width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; }
+.comic-panel figcaption { background:var(--ink); color:var(--foam); font-size:.7rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase; padding:.5rem .9rem; }
+
+.comic-transcript { max-width:860px; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--line); }
+.comic-transcript h2 { font-family:var(--display); font-size:clamp(1.9rem, 4vw, 2.4rem); margin:0 0 .4rem; }
+.comic-transcript h3 { font-family:var(--display); font-size:1.35rem; margin:0 0 .3rem; }
+.comic-transcript ol { list-style:none; margin:1.6rem 0 0; padding:0; display:grid; gap:1.6rem; }
+.comic-scene { color:var(--muted); margin:0; }
+.comic-silent { margin:.6rem 0 0; }
+.comic-lines { margin:.6rem 0 0; }
+.comic-lines dt { color:var(--deep); font-weight:800; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; }
+.comic-lines dd { margin:0 0 .7rem; }
+.comic-lines dd:last-of-type { margin-bottom:0; }
+.comic-lines dd.thought { font-style:italic; }
+
+.comic-nav { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:2.5rem; }
+.comic-nav-link { flex:1 1 200px; display:grid; align-content:center; gap:.15rem; min-height:66px; padding:.9rem 1.15rem; background:white; border:1px solid var(--line); border-radius:18px; box-shadow:0 10px 30px rgba(21,33,31,.07); transition:transform .15s ease, border-color .15s ease; }
+.comic-nav-link:hover { transform:translateY(-2px); border-color:var(--river); }
+.comic-nav-link span { color:var(--river); font-size:.66rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
+.comic-nav-link strong { font-family:var(--display); font-size:1.3rem; line-height:1.12; }
+.comic-nav-next { text-align:right; }
+.comic-notes { margin-top:2.5rem; }
+.comic-notes p { margin:.45rem 0 0; }
+.comic-notes p:first-child { margin-top:0; }
+
+.comic-card { transition:transform .15s ease, border-color .15s ease; }
+.comic-card:hover { transform:translateY(-3px); border-color:var(--river); }
+.comic-thumb { width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; background:var(--shell); border:2px solid var(--ink); border-radius:16px; margin-bottom:1rem; }
+
+/* Both steps are set by panel width, not by device class. A 2-up panel bottoms
+   out at 248px just above the 1-col step; a 4-up panel is only that wide once
+   the viewport passes ~1098px, so stepping to four any earlier would render
+   panels smaller than the narrowest they ever get on a phone. Stepping at the
+   existing 900px would put a 199px panel on a 901px laptop - the worst case in
+   the whole layout. Nothing here overrides the 900px block; it does not touch
+   .comic-panels. */
+@media (max-width: 1100px) {
+  .comic-panels { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .comic-panels { grid-template-columns:1fr; }
+  .comic-nav-next { text-align:left; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .comic-card, .comic-nav-link { transition:none; }
+  .comic-card:hover, .comic-nav-link:hover { transform:none; }
+}

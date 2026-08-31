@@ -2,6 +2,8 @@
   url: /story/
 - label: Characters
   url: /characters/
+- label: Comics
+  url: /comics/
 - label: Journal
   url: /journal/
 - label: Shop

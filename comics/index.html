@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Comics"
+description: "The Living the Hatch Life comic: four-panel strips about a crew that reads a small craft advisory as an invitation. One complete story, in order."
+permalink: /comics/
+---
+{% assign strips = site.comics | sort: "sequence" %}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">The strip</p>
+      <h1 class="section-title">One bad idea, four panels at a time.</h1>
+      <p class="lead">The Living the Hatch Life™ comic is a single short story told in {{ strips | size }} four-panel strips. They run in order and the story finishes in the last one. Start at the top and read straight through.</p>
+    </div>
+
+    <div class="grid cards-3">
+      {% for strip in strips %}
+      {% assign stem = '/assets/images/comics/' | append: strip.slug | append: '/panel-1-v' | append: strip.asset_version %}
+      <a class="card comic-card" href="{{ strip.url | relative_url }}">
+        <picture>
+          <source type="image/webp" srcset="{{ stem | append: '-540.webp' | relative_url }}">
+          <img class="comic-thumb" src="{{ stem | append: '-1080.jpg' | relative_url }}" width="1080" height="1080" alt="{{ 'Panel one of ' | append: strip.title | escape }}"{% unless forloop.first %} loading="lazy"{% endunless %} decoding="async">
+        </picture>
+        <p class="meta">Strip {{ strip.sequence }} of {{ strips | size }}</p>
+        <h3>{{ strip.title }}</h3>
+        <p>{{ strip.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
+
+    <p class="placeholder-note">Illustrations generated with AI tools. The story, the characters and every line of dialogue are written by hand. Each strip carries a full plain-text transcript.</p>
+  </div>
+</section>
