@@ -88,6 +88,10 @@ img { max-width: 100%; display: block; }
 .journal-card time { color:var(--river); font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.16em; }
 .footer { background:#0b1715; color:rgba(255,255,255,.78); padding:3rem 1.25rem; }
 .footer a { color:white; }
+/* Held in the stylesheet, not inline on the element, so the 900px block below can reach it.
+   The right column holds an email address that cannot break, so on a narrow phone a two
+   column track cannot shrink below it and the whole page scrolls sideways. */
+.footer-grid { grid-template-columns:1.2fr .8fr; gap:2rem; }
 .socials { display:flex; gap:.9rem; flex-wrap:wrap; }
 .socials a { border:1px solid var(--line); border-radius:999px; padding:.55rem .85rem; font-size:.75rem; text-transform:uppercase; letter-spacing:.12em; }
 .footer .socials a { border-color:rgba(255,255,255,.22); }
@@ -135,6 +139,7 @@ img { max-width: 100%; display: block; }
   .cards-3, .cards-4 { grid-template-columns:1fr; }
   .launch-cta { grid-template-columns:1fr; }
   .launch-form-row { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr; }
 }
 
 /* ---------- Comics ---------- */
